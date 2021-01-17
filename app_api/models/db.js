@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb+srv://mekan32:2852000@mekan32.xewp6.mongodb.net/mekan32?retryWrites=true&w=majority';
-mongoose.set ( 'useCreateIndex', true)
-mongoose.connect(dbURI, {usecreateIndexes: true});
+var dbURI = 'mongodb+srv://mekan32:mekan32@mekan32.8h1bh.mongodb.net/mekan32?retryWrites=true&w=majority';
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 mongoose.connection.on('connected', function () {
   console.log('Mongoose ' + dbURI + ' adresindeki veritabanına bağlandı\n');
@@ -18,7 +21,7 @@ mongoose.connection.on('disconnected', function () {
 });
 
 kapat = function (msg, callback) {
-  mongoose.connection.close(function() {
+  mongoose.connection.close(function () {
     console.log('Mongoose kapatıldı\n ' + msg);
     callback();
   });
@@ -46,3 +49,4 @@ process.on('SIGTERM', function () {
 });
 
 require('./mekansema');
+module.exports = mongoose;
