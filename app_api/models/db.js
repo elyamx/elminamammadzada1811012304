@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb+srv://mekan32:mekan32@mekan32.8h1bh.mongodb.net/mekan32?retryWrites=true&w=majority';
+var dbURI = 'mongodb+srv://mekan32:2852000@mekan32.xewp6.mongodb.net/mekan32?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
