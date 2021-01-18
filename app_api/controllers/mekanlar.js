@@ -55,7 +55,8 @@ const mekanlariListele= async(req, res) =>{
 }
 
 const mekanEkle=function(req, res) {
-  Mekan.create({
+    console.log(req.body)
+Mekan.create({
     ad: req.body.ad,
     adres: req.body.adres,
     imkanlar: req.body.imkanlar.split(","),
@@ -78,7 +79,7 @@ const mekanEkle=function(req, res) {
       cevapOlustur(res, 201, mekan);
     }
   });
-}
+  }
 
 const mekanGetir=function(req, res) {
   if(req.params&&req.params.mekanid){
